@@ -1,5 +1,10 @@
 Mirror-Executor
-!! MIRROR IS NOT CURRENTLY LINKED UNDER RELEASES, IT WILL BE ADDED SOON !! (Written on 2 Apr 2026)
+!! IMPORTANT !!
+MIRROR IS NOT CURRENTLY LINKED UNDER RELEASES, IT WILL BE ADDED SOON !!
+
+There is **not** a Mirror website (currently)
+There is **not** a Mirror Discord server
+Mirror has **not** been released yet, don't download it from anywhere other than here. If you have, run a full malware scan on your computers.
 
 The official GitHub page for Mirror! It's a keyless, clean executor featuring some stuff that's gonna get added cuz there isn't much stuff yet 😭 🙏.
 
