@@ -8,7 +8,7 @@ There is **not** a Mirror website (currently)
 
 There is **not** a Mirror Discord server
 
-Mirror has **not** been released yet, don't download it from anywhere other than here. If you have, run a full malware scan on your computers.
+Mirror has **not** been released yet, don't download it from anywhere other than here. If you have, run a full malware scan on your computer.
 
 The official GitHub page for Mirror! It's a keyless, clean executor featuring some stuff that's gonna get added cuz there isn't much stuff yet 😭 🙏.
 
