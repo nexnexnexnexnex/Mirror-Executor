@@ -16,7 +16,9 @@ When running the updater, please first ensure all previous version folders of Mi
 
 The folder name will never change, it will always be "MirrorLatest". You can verify whether the actual executor as been updated by either checking the name of the exe (e.g. Mirror-X.X.X) or opening the Changelog txt, which will show you when the update come out, which you can then compare to the current date to see if you're on the latest version.
 
-If your antivirus / Windows Defender starts to delete the folder, do NOT turn it off. Instead, add the entire folder as an exclusion, so it stops complaining. Tutorial: https://youtu.be/2H-xjZafDB4?si=uBfuUn4FWK-N-BOj (this is for a different executor, but it works exactly the same)
+If your antivirus / Windows Defender starts to delete the folder, do NOT turn it off. Instead, add the entire folder as an exclusion, so it stops complaining. 
+
+Tutorial: https://youtu.be/2H-xjZafDB4?si=uBfuUn4FWK-N-BOj (this is for a different executor, but it works exactly the same, credit to the guy who made it)
 
 Thanks for using Mirror!
-- nex
+nex
