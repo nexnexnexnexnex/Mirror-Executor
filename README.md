@@ -20,5 +20,13 @@ If your antivirus / Windows Defender starts to delete the folder, do NOT turn it
 
 Tutorial: https://youtu.be/2H-xjZafDB4?si=uBfuUn4FWK-N-BOj (this is for a different executor, but it works exactly the same, credit to the guy who made it)
 
+Should any major changes be made, such as a website being created for Mirror, you can find out by looking in the Notices txt. This contains all important information about the executor.
+
+If Mirror is **down**, the latest download folder will only have a txt time in it, explaining why it's down. This is to prevent my email from being spammed with injection & execution issues. If you are having issues, run the updater. If you notice that there isn't a MirrorLatest release, it means the same thing.
+
+If the repo is moved under a different account or renamed, it will be stated in the Notices txt.
+
+(ps, i plan to make a website for it soon 🤫)
+
 Thanks for using Mirror!
 nex
