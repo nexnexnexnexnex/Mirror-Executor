@@ -1,0 +1,717 @@
+{
+  "global_env": {
+    "getgenv": {
+      "label": "getgenv",
+      "type": "function",
+      "description": "Returns the global environment for the executor.",
+      "insert": "getgenv()"
+    },
+    "getrenv": {
+      "label": "getrenv",
+      "type": "function",
+      "description": "Returns the Roblox environment.",
+      "insert": "getrenv()"
+    },
+    "getreg": {
+      "label": "getreg",
+      "type": "function",
+      "description": "Returns the Lua registry.",
+      "insert": "getreg()"
+    },
+    "getgenv_value": {
+      "label": "getgenv_value",
+      "type": "function",
+      "description": "Gets a specific value from the global environment.",
+      "insert": "getgenv_value(\"key\")"
+    }
+  },
+  "misc": {
+    "isdbgpresent": {
+      "label": "isdbgpresent",
+      "type": "function",
+      "description": "Checks if a debugger is currently attached to the process.",
+      "insert": "isdbgpresent()"
+    },
+    "isdebuggerpresent": {
+      "label": "isdebuggerpresent",
+      "type": "function",
+      "description": "Alias for isdbgpresent(). Checks for debugger presence.",
+      "insert": "isdebuggerpresent()"
+    },
+    "getobjects": {
+      "label": "getobjects",
+      "type": "function",
+      "description": "Loads and returns objects from a Roblox asset ID or URL.",
+      "insert": "getobjects()"
+    }
+  },
+  "instances": {
+    "getinstances": {
+      "label": "getinstances",
+      "type": "function",
+      "description": "Returns all instances in the game, optionally filtered by class name.",
+      "insert": "getinstances()"
+    },
+    "getnilinstances": {
+      "label": "getnilinstances",
+      "type": "function",
+      "description": "Returns instances that have been parented to nil (hidden instances).",
+      "insert": "getnilinstances()"
+    },
+    "get_instances": {
+      "label": "get_instances",
+      "type": "function",
+      "description": "Alias for getinstances(). Gets all instances.",
+      "insert": "get_instances()"
+    },
+    "get_nil_instances": {
+      "label": "get_nil_instances",
+      "type": "function",
+      "description": "Alias for getnilinstances(). Gets nil-parented instances.",
+      "insert": "get_nil_instances()"
+    },
+    "GetInstances": {
+      "label": "GetInstances",
+      "type": "function",
+      "description": "Alias for getinstances(). Gets all instances.",
+      "insert": "GetInstances()"
+    },
+    "GetNilInstances": {
+      "label": "GetNilInstances",
+      "type": "function",
+      "description": "Alias for getnilinstances(). Gets nil instances.",
+      "insert": "GetNilInstances()"
+    },
+    "getloadedmodules": {
+      "label": "getloadedmodules",
+      "type": "function",
+      "description": "Returns all currently loaded ModuleScript instances.",
+      "insert": "getloadedmodules()"
+    },
+    "gethiddenproperty": {
+      "label": "gethiddenproperty",
+      "type": "function",
+      "description": "Gets the value of a hidden or protected property on an instance.",
+      "insert": "gethiddenproperty()"
+    },
+    "sethiddenproperty": {
+      "label": "sethiddenproperty",
+      "type": "function",
+      "description": "Sets the value of a hidden or protected property on an instance.",
+      "insert": "sethiddenproperty()"
+    },
+    "gethiddenproperties": {
+      "label": "gethiddenproperties",
+      "type": "function",
+      "description": "Returns a list of all hidden properties available on an instance.",
+      "insert": "gethiddenproperties()"
+    },
+    "getproperties": {
+      "label": "getproperties",
+      "type": "function",
+      "description": "Returns a list of all properties (including hidden) on an instance.",
+      "insert": "getproperties()"
+    },
+    "isscriptable": {
+      "label": "isscriptable",
+      "type": "function",
+      "description": "Checks if a property on an instance can be accessed via scripts.",
+      "insert": "isscriptable()"
+    },
+    "setscriptable": {
+      "label": "setscriptable",
+      "type": "function",
+      "description": "Sets whether a property can be accessed via scripts.",
+      "insert": "setscriptable()"
+    }
+  },
+  "identity": {
+    "getidentity": {
+      "label": "getidentity",
+      "type": "function",
+      "description": "Gets the current thread's identity level (security context).",
+      "insert": "getidentity()"
+    },
+    "getthreadidentity": {
+      "label": "getthreadidentity",
+      "type": "function",
+      "description": "Alias for getidentity(). Gets thread identity level.",
+      "insert": "getthreadidentity()"
+    },
+    "getthreadcontext": {
+      "label": "getthreadcontext",
+      "type": "function",
+      "description": "Alias for getidentity(). Gets thread context level.",
+      "insert": "getthreadcontext()"
+    },
+    "getcontext": {
+      "label": "getcontext",
+      "type": "function",
+      "description": "Alias for getidentity(). Gets current context level.",
+      "insert": "getcontext()"
+    },
+    "setidentity": {
+      "label": "setidentity",
+      "type": "function",
+      "description": "Sets the thread identity/context level. Higher levels grant more permissions.",
+      "insert": "setidentity()"
+    },
+    "setthreadidentity": {
+      "label": "setthreadidentity",
+      "type": "function",
+      "description": "Alias for setidentity(). Sets thread identity/context level.",
+      "insert": "setthreadidentity()"
+    },
+    "setthreadcontext": {
+      "label": "setthreadcontext",
+      "type": "function",
+      "description": "Alias for setidentity(). Sets thread context level.",
+      "insert": "setthreadcontext()"
+    },
+    "setcontext": {
+      "label": "setcontext",
+      "type": "function",
+      "description": "Alias for setidentity(). Sets thread context level.",
+      "insert": "setcontext()"
+    },
+    "setthreadcapabilities": {
+      "label": "setthreadcapabilities",
+      "type": "function",
+      "description": "Sets thread capabilities for the current thread.",
+      "insert": "setthreadcapabilities()"
+    },
+    "set_thread_capabilities": {
+      "label": "set_thread_capabilities",
+      "type": "function",
+      "description": "Alias for setthreadcapabilities(). Sets thread capabilities.",
+      "insert": "set_thread_capabilities()"
+    }
+  },
+  "scripts": {
+    "getscripts": {
+      "label": "getscripts",
+      "type": "function",
+      "description": "Returns a table of all script instances in the game.",
+      "insert": "getscripts()"
+    },
+    "getscriptclosure": {
+      "label": "getscriptclosure",
+      "type": "function",
+      "description": "Gets the closure/function of a script instance.",
+      "insert": "getscriptclosure()"
+    },
+    "getrunningscripts": {
+      "label": "getrunningscripts",
+      "type": "function",
+      "description": "Returns scripts that are currently running with threads.",
+      "insert": "getrunningscripts()"
+    },
+    "getscriptswiththreads": {
+      "label": "getscriptswiththreads",
+      "type": "function",
+      "description": "Alias for getrunningscripts(). Returns scripts with active threads.",
+      "insert": "getscriptswiththreads()"
+    },
+    "getscriptfromthread": {
+      "label": "getscriptfromthread",
+      "type": "function",
+      "description": "Gets the script instance associated with a thread.",
+      "insert": "getscriptfromthread()"
+    },
+    "getcallingscript": {
+      "label": "getcallingscript",
+      "type": "function",
+      "description": "Returns the script that called the current function.",
+      "insert": "getcallingscript()"
+    },
+    "get_calling_script": {
+      "label": "get_calling_script",
+      "type": "function",
+      "description": "Alias for getcallingscript(). Returns the calling script.",
+      "insert": "get_calling_script()"
+    },
+    "getcurrentscript": {
+      "label": "getcurrentscript",
+      "type": "function",
+      "description": "Alias for getcallingscript(). Returns current script.",
+      "insert": "getcurrentscript()"
+    },
+    "getscriptbytecode": {
+      "label": "getscriptbytecode",
+      "type": "function",
+      "description": "Returns the bytecode of a script as a string.",
+      "insert": "getscriptbytecode()"
+    },
+    "dumpstring": {
+      "label": "dumpstring",
+      "type": "function",
+      "description": "Alias for getscriptbytecode(). Dumps script bytecode.",
+      "insert": "dumpstring()"
+    },
+    "getsenv": {
+      "label": "getsenv",
+      "type": "function",
+      "description": "Gets the script environment of a script instance.",
+      "insert": "getsenv()"
+    },
+    "getmenv": {
+      "label": "getmenv",
+      "type": "function",
+      "description": "Alias for getsenv(). Gets script environment.",
+      "insert": "getmenv()"
+    },
+    "getcallbackvalue": {
+      "label": "getcallbackvalue",
+      "type": "function",
+      "description": "Gets the callback value from a script or function.",
+      "insert": "getcallbackvalue()"
+    },
+    "loadstring": {
+      "label": "loadstring",
+      "type": "function",
+      "description": "Compiles a string into a Lua function.",
+      "insert": "loadstring()"
+    },
+    "dostring": {
+      "label": "dostring",
+      "type": "function",
+      "description": "Compiles and executes a Lua string immediately.",
+      "insert": "dostring()"
+    }
+  },
+  "compression": {
+    "lz4compress": {
+      "label": "lz4compress",
+      "type": "function",
+      "description": "Compresses data using LZ4 compression algorithm.",
+      "insert": "lz4compress()"
+    },
+    "lz4decompress": {
+      "label": "lz4decompress",
+      "type": "function",
+      "description": "Decompresses LZ4 compressed data.",
+      "insert": "lz4decompress()"
+    }
+  },
+  "signals": {
+    "getconnections": {
+      "label": "getconnections",
+      "type": "function",
+      "description": "Returns all connections for a signal/event.",
+      "insert": "getconnections()"
+    },
+    "firesignal": {
+      "label": "firesignal",
+      "type": "function",
+      "description": "Fires a signal with specified arguments.",
+      "insert": "firesignal()"
+    },
+    "hooksignal": {
+      "label": "hooksignal",
+      "type": "function",
+      "description": "Hooks into a signal to intercept or modify its behavior.",
+      "insert": "hooksignal()"
+    },
+    "replicatesignal": {
+      "label": "replicatesignal",
+      "type": "function",
+      "description": "Replicates a signal across the network.",
+      "insert": "replicatesignal()"
+    },
+    "cansignalreplicate": {
+      "label": "cansignalreplicate",
+      "type": "function",
+      "description": "Checks if a signal can be replicated across network.",
+      "insert": "cansignalreplicate()"
+    },
+    "defersignal": {
+      "label": "defersignal",
+      "type": "function",
+      "description": "Defers signal execution to the next frame.",
+      "insert": "defersignal()"
+    }
+  },
+  "hashing": {
+    "getscripthash": {
+      "label": "getscripthash",
+      "type": "function",
+      "description": "Returns a hash of the script's bytecode.",
+      "insert": "getscripthash()"
+    },
+    "getfunctionhash": {
+      "label": "getfunctionhash",
+      "type": "function",
+      "description": "Returns a hash of a function's bytecode.",
+      "insert": "getfunctionhash()"
+    }
+  },
+  "game_events": {
+    "firetouchinterest": {
+      "label": "firetouchinterest",
+      "type": "function",
+      "description": "Simulates a touch event between two parts.",
+      "insert": "firetouchinterest()"
+    },
+    "firetouch": {
+      "label": "firetouch",
+      "type": "function",
+      "description": "Alias for firetouchinterest(). Simulates touch event.",
+      "insert": "firetouch()"
+    },
+    "fireclickdetector": {
+      "label": "fireclickdetector",
+      "type": "function",
+      "description": "Fires a ClickDetector as if it was clicked.",
+      "insert": "fireclickdetector()"
+    },
+    "fireproximityprompt": {
+      "label": "fireproximityprompt",
+      "type": "function",
+      "description": "Triggers a ProximityPrompt as if it was activated.",
+      "insert": "fireproximityprompt()"
+    }
+  },
+  "performance": {
+    "setfps": {
+      "label": "setfps",
+      "type": "function",
+      "description": "Sets the FPS cap for the game.",
+      "insert": "setfps()"
+    },
+    "set_fps": {
+      "label": "set_fps",
+      "type": "function",
+      "description": "Alias for setfps(). Sets FPS cap.",
+      "insert": "set_fps()"
+    },
+    "setfpscap": {
+      "label": "setfpscap",
+      "type": "function",
+      "description": "Alias for setfps(). Sets FPS cap.",
+      "insert": "setfpscap()"
+    },
+    "set_fps_cap": {
+      "label": "set_fps_cap",
+      "type": "function",
+      "description": "Alias for setfps(). Sets FPS cap.",
+      "insert": "set_fps_cap()"
+    },
+    "getfps": {
+      "label": "getfps",
+      "type": "function",
+      "description": "Returns the current FPS or FPS cap.",
+      "insert": "getfps()"
+    },
+    "get_fps": {
+      "label": "get_fps",
+      "type": "function",
+      "description": "Alias for getfps(). Returns current FPS.",
+      "insert": "get_fps()"
+    },
+    "getfpscap": {
+      "label": "getfpscap",
+      "type": "function",
+      "description": "Alias for getfps(). Returns FPS cap.",
+      "insert": "getfpscap()"
+    },
+    "get_fps_cap": {
+      "label": "get_fps_cap",
+      "type": "function",
+      "description": "Alias for getfps(). Returns FPS cap.",
+      "insert": "get_fps_cap()"
+    }
+  },
+  "teleport": {
+    "queue_on_teleport": {
+      "label": "queue_on_teleport",
+      "type": "function",
+      "description": "Queues code to execute when player teleports to new server.",
+      "insert": "queue_on_teleport()"
+    },
+    "queueonteleport": {
+      "label": "queueonteleport",
+      "type": "function",
+      "description": "Alias for queue_on_teleport(). Queues teleport code.",
+      "insert": "queueonteleport()"
+    },
+    "queueontp": {
+      "label": "queueontp",
+      "type": "function",
+      "description": "Alias for queue_on_teleport(). Queues teleport code.",
+      "insert": "queueontp()"
+    },
+    "queue_on_tp": {
+      "label": "queue_on_tp",
+      "type": "function",
+      "description": "Alias for queue_on_teleport(). Queues teleport code.",
+      "insert": "queue_on_tp()"
+    },
+    "clear_teleport_queue": {
+      "label": "clear_teleport_queue",
+      "type": "function",
+      "description": "Clears all queued teleport code.",
+      "insert": "clear_teleport_queue()"
+    },
+    "clearteleportqueue": {
+      "label": "clearteleportqueue",
+      "type": "function",
+      "description": "Alias for clear_teleport_queue(). Clears teleport queue.",
+      "insert": "clearteleportqueue()"
+    },
+    "cleartpqueue": {
+      "label": "cleartpqueue",
+      "type": "function",
+      "description": "Alias for clear_teleport_queue(). Clears teleport queue.",
+      "insert": "cleartpqueue()"
+    },
+    "clear_tp_queue": {
+      "label": "clear_tp_queue",
+      "type": "function",
+      "description": "Alias for clear_teleport_queue(). Clears teleport queue.",
+      "insert": "clear_tp_queue()"
+    }
+  },
+  "salad": {
+    "disable_func": {
+      "label": "salad.disable_func",
+      "type": "function",
+      "description": "Disables a function by hooking it to show a warning message.",
+      "insert": "salad.disable_func()"
+    },
+    "disablefunc": {
+      "label": "salad.disablefunc",
+      "type": "function",
+      "description": "Alias for salad.disable_func(). Disables a function.",
+      "insert": "salad.disablefunc()"
+    },
+    "enable_func": {
+      "label": "salad.enable_func",
+      "type": "function",
+      "description": "Re-enables a previously disabled function.",
+      "insert": "salad.enable_func()"
+    },
+    "enablefunc": {
+      "label": "salad.enablefunc",
+      "type": "function",
+      "description": "Alias for salad.enable_func(). Re-enables a disabled function.",
+      "insert": "salad.enablefunc()"
+    },
+    "is_func_disabled": {
+      "label": "salad.is_func_disabled",
+      "type": "function",
+      "description": "Checks if a function is currently disabled.",
+      "insert": "salad.is_func_disabled()"
+    },
+    "isfuncdisabled": {
+      "label": "salad.isfuncdisabled",
+      "type": "function",
+      "description": "Alias for salad.is_func_disabled(). Checks if function is disabled.",
+      "insert": "salad.isfuncdisabled()"
+    },
+    "get_disabled_funcs_list": {
+      "label": "salad.get_disabled_funcs_list",
+      "type": "function",
+      "description": "Returns a list of all currently disabled function names.",
+      "insert": "salad.get_disabled_funcs_list()"
+    },
+    "getdisabledfuncslist": {
+      "label": "salad.getdisabledfuncslist",
+      "type": "function",
+      "description": "Alias for salad.get_disabled_funcs_list(). Gets disabled functions list.",
+      "insert": "salad.getdisabledfuncslist()"
+    },
+    "get_disabled_funcs_count": {
+      "label": "salad.get_disabled_funcs_count",
+      "type": "function",
+      "description": "Returns the count of currently disabled functions.",
+      "insert": "salad.get_disabled_funcs_count()"
+    },
+    "getdisabledfuncscount": {
+      "label": "salad.getdisabledfuncscount",
+      "type": "function",
+      "description": "Alias for salad.get_disabled_funcs_count(). Gets disabled functions count.",
+      "insert": "salad.getdisabledfuncscount()"
+    },
+    "clear_all_disabled_funcs": {
+      "label": "salad.clear_all_disabled_funcs",
+      "type": "function",
+      "description": "Re-enables all currently disabled functions.",
+      "insert": "salad.clear_all_disabled_funcs()"
+    },
+    "clearalldisabledfuncs": {
+      "label": "salad.clearalldisabledfuncs",
+      "type": "function",
+      "description": "Alias for salad.clear_all_disabled_funcs(). Clears all disabled functions.",
+      "insert": "salad.clearalldisabledfuncs()"
+    },
+    "get_plr_by_name": {
+      "label": "salad.get_plr_by_name",
+      "type": "function",
+      "description": "Gets a player by their display name or username.",
+      "insert": "salad.get_plr_by_name()"
+    },
+    "getplrbyname": {
+      "label": "salad.getplrbyname",
+      "type": "function",
+      "description": "Alias for salad.get_plr_by_name(). Gets player by name.",
+      "insert": "salad.getplrbyname()"
+    },
+    "get_hrp": {
+      "label": "salad.get_hrp",
+      "type": "function",
+      "description": "Gets the HumanoidRootPart of a player's character.",
+      "insert": "salad.get_hrp()"
+    },
+    "gethrp": {
+      "label": "salad.gethrp",
+      "type": "function",
+      "description": "Alias for salad.get_hrp(). Gets player's HumanoidRootPart.",
+      "insert": "salad.gethrp()"
+    },
+    "tp": {
+      "label": "salad.tp",
+      "type": "function",
+      "description": "Teleports the local player to a target position.",
+      "insert": "salad.tp()"
+    },
+    "is_plr_alive": {
+      "label": "salad.is_plr_alive",
+      "type": "function",
+      "description": "Checks if a player is alive (health > 0).",
+      "insert": "salad.is_plr_alive()"
+    },
+    "isplralive": {
+      "label": "salad.isplralive",
+      "type": "function",
+      "description": "Alias for salad.is_plr_alive(). Checks if player is alive.",
+      "insert": "salad.isplralive()"
+    },
+    "tp_to_plr": {
+      "label": "salad.tp_to_plr",
+      "type": "function",
+      "description": "Teleports the local player to another player by name.",
+      "insert": "salad.tp_to_plr()"
+    },
+    "tptoplr": {
+      "label": "salad.tptoplr",
+      "type": "function",
+      "description": "Alias for salad.tp_to_plr(). Teleports to player.",
+      "insert": "salad.tptoplr()"
+    },
+    "get_dist": {
+      "label": "salad.get_dist",
+      "type": "function",
+      "description": "Gets the distance between two players by their names.",
+      "insert": "salad.get_dist()"
+    },
+    "getdist": {
+      "label": "salad.getdist",
+      "type": "function",
+      "description": "Alias for salad.get_dist(). Gets distance between players.",
+      "insert": "salad.getdist()"
+    },
+    "beautify": {
+      "label": "salad.beautify",
+      "type": "function",
+      "description": "Beautifies/formats Lua code for better readability.",
+      "insert": "salad.beautify()"
+    },
+    "beautifycode": {
+      "label": "salad.beautifycode",
+      "type": "function",
+      "description": "Alias for salad.beautify(). Beautifies Lua code.",
+      "insert": "salad.beautifycode()"
+    }
+  },
+  "mirror": {
+    "debUNCTest": {
+      "label": "Mirror:deBUNC",
+      "type": "function",
+      "description": "Runs alyssagithub's debUNC test.",
+      "insert": "MirrorLibrary:debUNCTest()"
+    },
+    "Start_debUNC": {
+      "label": "Mirror:Start_debUNC",
+      "type": "function",
+      "description": "Alias for debUNCTest(). Runs alyssagithub's debUNC test.",
+      "insert": "MirrorLibrary:Start_debUNC()"
+    },
+    "CheckCustomFunctions": {
+      "label": "Mirror:CheckCustomFunctions",
+      "type": "function",
+      "description": "Checks existence of all MirrorLibrary functions",
+      "insert": "MirrorLibrary:CheckCustomFunctions()"
+    },
+    "Check_Custom_Functions": {
+      "label": "Mirror:Check_Custom_Functions",
+      "type": "function",
+      "description": "Alias for CheckCustomFunctions(). Checks existence of all MirrorLibrary functions"
+    },
+    "GetLibVersion": {
+      "label": "Mirror:GetVersion",
+      "type": "function",
+      "description": "Displays a notification showing the current MirrorLibrary version",
+      "insert": "MirrorLibrary:GetLibVersion()"
+    },
+    "RetServerPlrsInfo": {
+      "label": "Mirror:GetAllPlayerInfo",
+      "type": "function",
+      "description": "Prints all players' username, display name, and user ID",
+      "insert": "MirrorLibrary:GetAllPlayerInfo()"
+    },
+    "ListAllOfClass": {
+      "label": "Mirror:ListAll",
+      "type": "function",
+      "description": "Lists all of a given class using ipairs",
+      "insert": "MirrorLibrary:ListAll('ClassName')"
+    },
+    "GetPlayerHealth": {
+      "label": "Mirror:GetPlayerHealth",
+      "type": "function",
+      "description": "Returns the specified player's health in a notification",
+      "insert": "MirrorLibrary:GetPlayerHealth('PlayerUsername')"
+    },
+    "PlaySound": {
+      "label": "Mirror:PlaySound",
+      "type": "function",
+      "description": "Plays a sound",
+      "insert": "MirrorLibrary:PlaySound('SoundID')"
+    },
+    "DeleteAllOfClass": {
+      "label": "Mirror:DestroyAll",
+      "type": "function",
+      "description": "Destroys all instances of the specified class",
+      "insert": "MirrorLibrary:DestroyAll('ClassName')"
+    },
+    "SpamNotifs": {
+      "label": "Mirror:SpamNotifications",
+      "type": "function",
+      "description": "Spams Roblox's built in notification system for the specified amount of seconds",
+      "insert": "MirrorLibrary:SpamNotifications(seconds)"
+    },
+    "KillLP": {
+      "label": "Mirror:KillSelf",
+      "type": "function",
+      "description": "Kills you by setting your health to 0",
+      "insert": "MirrorLibrary:KillSelf()"
+    },
+    "SetFullBright": {
+      "label": "Mirror:SetFullBright",
+      "type": "function",
+      "description": "Allows you to enable or disable fullbright mode",
+      "insert": "MirrorLibrary:SetFullBright(true/false)"
+    },
+    "GetStats": {
+      "label": "Mirror:GetStats",
+      "type": "function",
+      "description": "Prints current FPS and ping to console",
+      "insert": "MirrorLibrary:GetStats()"
+    },
+    "AprilFools/PullPassword": {
+      "label": "Mirror:PullPassword",
+      "type": "function",
+      "description": "Allows you to get the password for any user's account if they are currently in the server",
+      "insert": "MirrorLibrary:PullPassword(Username)"
+    }
+  }
+}
