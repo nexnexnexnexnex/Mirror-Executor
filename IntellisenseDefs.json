@@ -471,247 +471,107 @@
       "insert": "clear_tp_queue()"
     }
   },
-  "salad": {
-    "disable_func": {
-      "label": "salad.disable_func",
-      "type": "function",
-      "description": "Disables a function by hooking it to show a warning message.",
-      "insert": "salad.disable_func()"
-    },
-    "disablefunc": {
-      "label": "salad.disablefunc",
-      "type": "function",
-      "description": "Alias for salad.disable_func(). Disables a function.",
-      "insert": "salad.disablefunc()"
-    },
-    "enable_func": {
-      "label": "salad.enable_func",
-      "type": "function",
-      "description": "Re-enables a previously disabled function.",
-      "insert": "salad.enable_func()"
-    },
-    "enablefunc": {
-      "label": "salad.enablefunc",
-      "type": "function",
-      "description": "Alias for salad.enable_func(). Re-enables a disabled function.",
-      "insert": "salad.enablefunc()"
-    },
-    "is_func_disabled": {
-      "label": "salad.is_func_disabled",
-      "type": "function",
-      "description": "Checks if a function is currently disabled.",
-      "insert": "salad.is_func_disabled()"
-    },
-    "isfuncdisabled": {
-      "label": "salad.isfuncdisabled",
-      "type": "function",
-      "description": "Alias for salad.is_func_disabled(). Checks if function is disabled.",
-      "insert": "salad.isfuncdisabled()"
-    },
-    "get_disabled_funcs_list": {
-      "label": "salad.get_disabled_funcs_list",
-      "type": "function",
-      "description": "Returns a list of all currently disabled function names.",
-      "insert": "salad.get_disabled_funcs_list()"
-    },
-    "getdisabledfuncslist": {
-      "label": "salad.getdisabledfuncslist",
-      "type": "function",
-      "description": "Alias for salad.get_disabled_funcs_list(). Gets disabled functions list.",
-      "insert": "salad.getdisabledfuncslist()"
-    },
-    "get_disabled_funcs_count": {
-      "label": "salad.get_disabled_funcs_count",
-      "type": "function",
-      "description": "Returns the count of currently disabled functions.",
-      "insert": "salad.get_disabled_funcs_count()"
-    },
-    "getdisabledfuncscount": {
-      "label": "salad.getdisabledfuncscount",
-      "type": "function",
-      "description": "Alias for salad.get_disabled_funcs_count(). Gets disabled functions count.",
-      "insert": "salad.getdisabledfuncscount()"
-    },
-    "clear_all_disabled_funcs": {
-      "label": "salad.clear_all_disabled_funcs",
-      "type": "function",
-      "description": "Re-enables all currently disabled functions.",
-      "insert": "salad.clear_all_disabled_funcs()"
-    },
-    "clearalldisabledfuncs": {
-      "label": "salad.clearalldisabledfuncs",
-      "type": "function",
-      "description": "Alias for salad.clear_all_disabled_funcs(). Clears all disabled functions.",
-      "insert": "salad.clearalldisabledfuncs()"
-    },
-    "get_plr_by_name": {
-      "label": "salad.get_plr_by_name",
-      "type": "function",
-      "description": "Gets a player by their display name or username.",
-      "insert": "salad.get_plr_by_name()"
-    },
-    "getplrbyname": {
-      "label": "salad.getplrbyname",
-      "type": "function",
-      "description": "Alias for salad.get_plr_by_name(). Gets player by name.",
-      "insert": "salad.getplrbyname()"
-    },
-    "get_hrp": {
-      "label": "salad.get_hrp",
-      "type": "function",
-      "description": "Gets the HumanoidRootPart of a player's character.",
-      "insert": "salad.get_hrp()"
-    },
-    "gethrp": {
-      "label": "salad.gethrp",
-      "type": "function",
-      "description": "Alias for salad.get_hrp(). Gets player's HumanoidRootPart.",
-      "insert": "salad.gethrp()"
-    },
-    "tp": {
-      "label": "salad.tp",
-      "type": "function",
-      "description": "Teleports the local player to a target position.",
-      "insert": "salad.tp()"
-    },
-    "is_plr_alive": {
-      "label": "salad.is_plr_alive",
-      "type": "function",
-      "description": "Checks if a player is alive (health > 0).",
-      "insert": "salad.is_plr_alive()"
-    },
-    "isplralive": {
-      "label": "salad.isplralive",
-      "type": "function",
-      "description": "Alias for salad.is_plr_alive(). Checks if player is alive.",
-      "insert": "salad.isplralive()"
-    },
-    "tp_to_plr": {
-      "label": "salad.tp_to_plr",
-      "type": "function",
-      "description": "Teleports the local player to another player by name.",
-      "insert": "salad.tp_to_plr()"
-    },
-    "tptoplr": {
-      "label": "salad.tptoplr",
-      "type": "function",
-      "description": "Alias for salad.tp_to_plr(). Teleports to player.",
-      "insert": "salad.tptoplr()"
-    },
-    "get_dist": {
-      "label": "salad.get_dist",
-      "type": "function",
-      "description": "Gets the distance between two players by their names.",
-      "insert": "salad.get_dist()"
-    },
-    "getdist": {
-      "label": "salad.getdist",
-      "type": "function",
-      "description": "Alias for salad.get_dist(). Gets distance between players.",
-      "insert": "salad.getdist()"
-    },
-    "beautify": {
-      "label": "salad.beautify",
-      "type": "function",
-      "description": "Beautifies/formats Lua code for better readability.",
-      "insert": "salad.beautify()"
-    },
-    "beautifycode": {
-      "label": "salad.beautifycode",
-      "type": "function",
-      "description": "Alias for salad.beautify(). Beautifies Lua code.",
-      "insert": "salad.beautifycode()"
-    }
-  },
   "mirror": {
     "debUNCTest": {
-      "label": "Mirror:deBUNC",
+      "label": "MirrorLibrary:deBUNC",
       "type": "function",
       "description": "Runs alyssagithub's debUNC test.",
       "insert": "MirrorLibrary:debUNCTest()"
     },
     "Start_debUNC": {
-      "label": "Mirror:Start_debUNC",
+      "label": "MirrorLibrary:Start_debUNC",
       "type": "function",
       "description": "Alias for debUNCTest(). Runs alyssagithub's debUNC test.",
       "insert": "MirrorLibrary:Start_debUNC()"
     },
     "CheckCustomFunctions": {
-      "label": "Mirror:CheckCustomFunctions",
+      "label": "MirrorLibrary:CheckCustomFunctions",
       "type": "function",
       "description": "Checks existence of all MirrorLibrary functions",
       "insert": "MirrorLibrary:CheckCustomFunctions()"
     },
     "Check_Custom_Functions": {
-      "label": "Mirror:Check_Custom_Functions",
+      "label": "MirrorLibrary:Check_Custom_Functions",
       "type": "function",
       "description": "Alias for CheckCustomFunctions(). Checks existence of all MirrorLibrary functions"
     },
     "GetLibVersion": {
-      "label": "Mirror:GetVersion",
+      "label": "MirrorLibrary:GetVersion",
       "type": "function",
       "description": "Displays a notification showing the current MirrorLibrary version",
       "insert": "MirrorLibrary:GetLibVersion()"
     },
     "RetServerPlrsInfo": {
-      "label": "Mirror:GetAllPlayerInfo",
+      "label": "MirrorLibrary:GetAllPlayerInfo",
       "type": "function",
       "description": "Prints all players' username, display name, and user ID",
       "insert": "MirrorLibrary:GetAllPlayerInfo()"
     },
     "ListAllOfClass": {
-      "label": "Mirror:ListAll",
+      "label": "MirrorLibrary:ListAll",
       "type": "function",
       "description": "Lists all of a given class using ipairs",
       "insert": "MirrorLibrary:ListAll('ClassName')"
     },
     "GetPlayerHealth": {
-      "label": "Mirror:GetPlayerHealth",
+      "label": "MirrorLibrary:GetPlayerHealth",
       "type": "function",
       "description": "Returns the specified player's health in a notification",
       "insert": "MirrorLibrary:GetPlayerHealth('PlayerUsername')"
     },
     "PlaySound": {
-      "label": "Mirror:PlaySound",
+      "label": "MirrorLibrary:PlaySound",
       "type": "function",
       "description": "Plays a sound",
       "insert": "MirrorLibrary:PlaySound('SoundID')"
     },
     "DeleteAllOfClass": {
-      "label": "Mirror:DestroyAll",
+      "label": "MirrorLibrary:DestroyAll",
       "type": "function",
       "description": "Destroys all instances of the specified class",
       "insert": "MirrorLibrary:DestroyAll('ClassName')"
     },
-    "SpamNotifs": {
-      "label": "Mirror:SpamNotifications",
-      "type": "function",
-      "description": "Spams Roblox's built in notification system for the specified amount of seconds",
-      "insert": "MirrorLibrary:SpamNotifications(seconds)"
-    },
     "KillLP": {
-      "label": "Mirror:KillSelf",
+      "label": "MirrorLibrary:KillSelf",
       "type": "function",
       "description": "Kills you by setting your health to 0",
       "insert": "MirrorLibrary:KillSelf()"
     },
     "SetFullBright": {
-      "label": "Mirror:SetFullBright",
+      "label": "MirrorLibrary:SetFullBright",
       "type": "function",
       "description": "Allows you to enable or disable fullbright mode",
       "insert": "MirrorLibrary:SetFullBright(true/false)"
     },
     "GetStats": {
-      "label": "Mirror:GetStats",
+      "label": "MirrorLibrary:GetStats",
       "type": "function",
       "description": "Prints current FPS and ping to console",
       "insert": "MirrorLibrary:GetStats()"
     },
-    "AprilFools/PullPassword": {
-      "label": "Mirror:PullPassword",
+    "Kiciahook": {
+      "label": "MirrorLibrary:Kiciahook",
       "type": "function",
-      "description": "Allows you to get the password for any user's account if they are currently in the server",
-      "insert": "MirrorLibrary:PullPassword(Username)"
+      "description": "Injects Kiciahook",
+      "insert": "MirrorLibrary:Kiciahook()"
+    },
+    "IY": {
+      "label": "MirrorLibrary:InfiniteYield",
+      "type": "function",
+      "description": "Injects Infinite Yield",
+      "insert": "MirrorLibrary:InfiniteYield()"
+    },
+    "UE": {
+      "label": "MirrorLibrary:UnnamedEnhancements",
+      "type": "function",
+      "description": "Injects UnnamedEnhancements",
+      "insert": "MirrorLibrary:UnnamedEnhancements()"
+    },
+    "Novoline.pro": {
+      "label": "MirrorLibrary:Novoline",
+      "type": "function",
+      "description": "Injects Novoline",
+      "insert": "MirrorLibrary:Novoline()"
     }
   }
 }
