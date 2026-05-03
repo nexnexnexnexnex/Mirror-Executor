@@ -95,7 +95,6 @@ Notify("Mirror", "Library loaded!") -- can delete if you want
 
 -- Checks existence of all MirrorLibrary functions
 function g.MirrorLibrary:CheckCustomFunctions()
-    -- List the specific functions you want to verify
     local functionsToVerify = {
         "debUNCTest",
         "CheckCustomFunctions",
@@ -115,12 +114,9 @@ function g.MirrorLibrary:CheckCustomFunctions()
     print("--- CheckCustomFunctions ---")
 
     for _, name in ipairs(functionsToVerify) do
-        -- We check 'self' because this function is inside MirrorLibrary
         if self[name] and type(self[name]) == "function" then
-            -- Success (Using warn for orange or your green trick)
             print("✅ MirrorLib:" .. name)
         else
-            -- Failure (The Red X you are seeing)
             warn("❌ MirrorLib:" .. name .. " NOT FOUND")
         end
     end
@@ -136,7 +132,7 @@ function g.MirrorLibrary:debUNCTest()
     Notify("Mirror", "debUNC test started\nOpen Console")
   else
     Notify("Mirror", "Error: debUNCTest pcall returned error\nOpen Console")
-    warn("[MirrorLibrary] debUNCTest error: ", e)
+    warn("[debUNCTest] Error: ", e)
   end
 end
 
