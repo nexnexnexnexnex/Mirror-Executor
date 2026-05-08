@@ -1,14 +1,6 @@
 --[[
 MirrorLibrary
-Open-sourced cuz i'm cool 👍👍
-Save this as a .lua and add to your AutoExec folder
-If you don't have an AutoExec folder,
-Code your inject button to execute this script as well as injecting
-If you don't have an inject button
-Seek help
-
-Please give credits somewhere in your executor/discord/website
-"MirrorLibrary by nex" will do
+Credit required!!
 
 Enjoy
 ]]
@@ -25,35 +17,55 @@ local g = getgenv()
 local Mirror = {}
 g.MirrorLibrary = Mirror
 
+g.MirrorLibrary.ShowNotifications = true -- change to false to disable notifications from startup
+
 local libversion = "1.0.0"
 
-local _StarterGui = game:GetService("StarterGui") -- yes this is vibecoded i'm terrible at ui design and tweenservice
+-- yes this is vibecoded i'm terrible at ui design and tweenservice
 local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 
 local function Notify(title, text)
+  if title and text and g.MirrorLibrary.ShowNotifications then
     local TweenService = game:GetService("TweenService")
     local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
 
-    local gui = playerGui:FindFirstChild("NotificationSystem") or Instance.new("ScreenGui", playerGui)
-    gui.Name = "NotificationSystem"
-    gui.ResetOnSpawn = false
+    local gui = playerGui:FindFirstChild("NotificationSystem")
+    if not gui then
+        gui = Instance.new("ScreenGui")
+        gui.Name = "NotificationSystem"
+        gui.ResetOnSpawn = false
+        gui.Parent = playerGui
+    end
+
+    local holder = gui:FindFirstChild("Holder")
+    if not holder then
+        holder = Instance.new("Frame")
+        holder.Name = "Holder"
+        holder.BackgroundTransparency = 1
+        holder.Size = UDim2.new(0, 280, 1, -20)
+        holder.Position = UDim2.new(1, -300, 0, 10)
+        holder.Parent = gui
+
+        local layout = Instance.new("UIListLayout")
+        layout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+        layout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+        layout.Padding = UDim.new(0, 10)
+        layout.SortOrder = Enum.SortOrder.LayoutOrder
+        layout.Parent = holder
+    end
 
     local frame = Instance.new("Frame")
     frame.Size = UDim2.new(0, 260, 0, 80)
-    frame.Position = UDim2.new(1, 20, 1, -100)
     frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
     frame.BorderSizePixel = 0
-    frame.Parent = gui
+    frame.BackgroundTransparency = 1
+    frame.LayoutOrder = tick()
+    frame.Parent = holder
 
     local corner = Instance.new("UICorner")
     corner.CornerRadius = UDim.new(0, 8)
     corner.Parent = frame
-
-    local stroke = Instance.new("UIStroke")
-    stroke.Color = Color3.fromRGB(255, 255, 255)
-    stroke.Transparency = 0.8
-    stroke.Parent = frame
 
     local titleLabel = Instance.new("TextLabel")
     titleLabel.Size = UDim2.new(1, -20, 0, 30)
@@ -61,6 +73,7 @@ local function Notify(title, text)
     titleLabel.BackgroundTransparency = 1
     titleLabel.Text = title
     titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    titleLabel.TextTransparency = 1
     titleLabel.Font = Enum.Font.GothamBold
     titleLabel.TextSize = 14
     titleLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -72,6 +85,7 @@ local function Notify(title, text)
     descLabel.BackgroundTransparency = 1
     descLabel.Text = text
     descLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+    descLabel.TextTransparency = 1
     descLabel.Font = Enum.Font.Gotham
     descLabel.TextSize = 12
     descLabel.TextWrapped = true
@@ -79,22 +93,36 @@ local function Notify(title, text)
     descLabel.TextYAlignment = Enum.TextYAlignment.Top
     descLabel.Parent = frame
 
-    local tInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-    
-    TweenService:Create(frame, tInfo, {Position = UDim2.new(1, -280, 1, -100)}):Play()
-    
+    local tInfo = TweenInfo.new(0.4, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+    TweenService:Create(frame, tInfo, {BackgroundTransparency = 0}):Play()
+    TweenService:Create(titleLabel, tInfo, {TextTransparency = 0}):Play()
+    TweenService:Create(descLabel, tInfo, {TextTransparency = 0}):Play()
+
     task.delay(5, function()
-        local fade = TweenService:Create(frame, tInfo, {Position = UDim2.new(1, 20, 1, -100)})
+        local fade = TweenService:Create(frame, tInfo, {BackgroundTransparency = 1, Size = UDim2.new(0, 0, 0, 0)})
+        TweenService:Create(titleLabel, tInfo, {TextTransparency = 1}):Play()
+        TweenService:Create(descLabel, tInfo, {TextTransparency = 1}):Play()
+        
         fade:Play()
         fade.Completed:Wait()
         frame:Destroy()
     end)
+  else
+    return
+  end
 end
 
 Notify("Mirror", "Library loaded!") -- can delete if you want
 
+
+function g.MirrorLibrary:ToggleNotifs()
+  self.ShowNotifications = not self.ShowNotifications
+  print("[MirrorInternal] Notifications: "..tostring(self.ShowNotifications))
+end
+
 -- Checks existence of all MirrorLibrary functions
 function g.MirrorLibrary:CheckCustomFunctions()
+    -- List the specific functions you want to verify
     local functionsToVerify = {
         "debUNCTest",
         "CheckCustomFunctions",
@@ -114,9 +142,12 @@ function g.MirrorLibrary:CheckCustomFunctions()
     print("--- CheckCustomFunctions ---")
 
     for _, name in ipairs(functionsToVerify) do
+        -- We check 'self' because this function is inside MirrorLibrary
         if self[name] and type(self[name]) == "function" then
+            -- Success (Using warn for orange or your green trick)
             print("✅ MirrorLib:" .. name)
         else
+            -- Failure (The Red X you are seeing)
             warn("❌ MirrorLib:" .. name .. " NOT FOUND")
         end
     end
@@ -132,7 +163,7 @@ function g.MirrorLibrary:debUNCTest()
     Notify("Mirror", "debUNC test started\nOpen Console")
   else
     Notify("Mirror", "Error: debUNCTest pcall returned error\nOpen Console")
-    warn("[debUNCTest] Error: ", e)
+    warn("[MirrorLibrary] debUNCTest error: ", e)
   end
 end
 
@@ -324,5 +355,52 @@ function g.MirrorLibrary:Novoline()
   else
     Notify("Mirror", "Error: loadstring returned error\nOpen Console")
     warn("[MirrorLibrary/Novoline()] Error: ", e)
+  end
+end
+
+function g.MirrorLibrary:SaveInstance(options)
+local Params = {
+  RepoURL = "https://raw.githubusercontent.com/luau/UniversalSynSaveInstance/main/",
+  SSI = "saveinstance",
+}
+  local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".luau", true), Params.SSI)()
+  synsaveinstance(options)
+end
+
+local SavedCameraState = nil
+
+function g.MirrorLibrary:Spectate(username)
+  local camera = workspace.CurrentCamera
+  if camera and not SavedCameraState then
+    SavedCameraState = {
+      CameraType = camera.CameraType,
+      CameraSubject = camera.CameraSubject,
+      CFrame = camera.CFrame,
+      Focus = camera.Focus,
+    }
+  end
+
+  local player = Players:FindFirstChild(username)
+  if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+    camera.CameraType = Enum.CameraType.Scriptable
+    camera.CFrame = player.Character.HumanoidRootPart.CFrame
+    camera.Focus = player.Character.HumanoidRootPart.CFrame
+    Notify("Mirror", "Spectating " .. username)
+  else
+    Notify("Mirror", "Player not found")
+  end
+end
+
+function g.MirrorLibrary:Unspectate()
+  local camera = workspace.CurrentCamera
+  if SavedCameraState and camera then
+    camera.CameraType = SavedCameraState.CameraType
+    camera.CameraSubject = SavedCameraState.CameraSubject
+    camera.CFrame = SavedCameraState.CFrame
+    camera.Focus = SavedCameraState.Focus
+    SavedCameraState = nil
+    Notify("Mirror", "Stopped spectating")
+  else
+    Notify("Mirror", "You aren't spectating anyone")
   end
 end
