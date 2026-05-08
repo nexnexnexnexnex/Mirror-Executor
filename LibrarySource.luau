@@ -358,7 +358,7 @@ function g.MirrorLibrary:Novoline()
   end
 end
 
-function g.MirrorLibrary:SaveInstance(options)
+function g.SaveInstance(options)
 local Params = {
   RepoURL = "https://raw.githubusercontent.com/luau/UniversalSynSaveInstance/main/",
   SSI = "saveinstance",
